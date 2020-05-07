@@ -1,0 +1,57 @@
+{% extends "layout.html" %} {% block title %} My stats {% endblock %} {% block main %}
+<div>
+    <p class="headline">Smart Journal Overview</p>
+    <p class="headline_2">Your Awards<span class="badge badge-secondary">New</span></p>
+    {% if count >= 5 %}
+    <p class="body_left"><span class="award">🏆</span> Written 5 or more entries!!</p>
+    {% endif %} {% if counter >= 5 %}
+    <p class="body_left"><span class="award">🔥</span> You're on a {{ counter }} day streak!!</p>
+    {% endif %} {% if five == 0 and streak == 0 %}
+    <p class="body_left"> No current awards</p>
+    <p class="subtext">Here's some awards to work towards:</p>
+    <ul>
+        <li class="subtext">Write at least 5 entries</li>
+        <li class="subtext">Write in your Smart Journal 5 days in a row</li>
+        <a href="/entry" class="body_left">Write a New Entry Now</a>
+    </ul>
+    {% endif %}
+    <p class="headline_2">Your stats</p>
+    <dl>
+        <dt class="body_left"><b>Total entries:</b> {{ count }}</dt>
+        <br>
+        <dt class="body_left"><b>Mood:</b></dt>
+        <dd class="subtext">You've reported feeling happy {{ happy_percent }}% of the time. ({{ happy }} days)</dd>
+        <dd class="subtext">You've reported feeling neutral {{ neutral_percent }}% of the time. ({{ neutral }} days)</dd>
+        <dd class="subtext">You've reported feeling sad {{ sad_percent }}% of the time. ({{ sad }} days)</dd>
+        <dt class="body_left"><b>Anxiety:</b></dt>
+        <dd class="subtext">You've reported feeling not at all anxious {{ n_a_p }}% of the time. ({{ n_a }} days)</dd>
+        <dd class="subtext">You've reported feeling somewhat anxious {{ s_a_p }}% of the time. ({{ s_a }} days)</dd>
+        <dd class="subtext">You've reported feeling very anxious {{ v_a_p }}% of the time. ({{ v_a }} days)</dd>
+        <dt class="body_left"><b>Enjoyment:</b></dt>
+        <dd class="subtext">You've reported doing something you enjoy {{ y_p }}% of the time. ({{ yes }} days)</dd>
+        <dd class="subtext">You've reported having not done something you enjoy {{ n_p }}% of the time. ({{ no }} days)</dd>
+        <dt class="body_left"><b>Satisfaction:</b></dt>
+        <dd class="subtext">You've reported feeling very satisfied with how things are going {{ very_p }}% of the time. ({{ very }} days)</dd>
+        <dd class="subtext">You've reported feeling somewhat satisfied with how things are going {{ some_p }}% of the time. ({{ some }} days)</dd>
+        <dd class="subtext">You've reported feeling not satisfied with how things are going {{ not_p }}% of the time. ({{ not_s }} days)</dd>
+
+    </dl>
+    <br>
+    <p class="headline_2">Search entry by date</p>
+    <form action="/overview" method="post">
+        <div class="form-group">
+            <select name="date" , placeholder="date">
+            {% for day in days %}
+            <option>{{ day.timestamp }}</option>
+            {% endfor %}
+            </select>
+
+            <button class="btn btn-info" type="submit">Find Entry</button>
+    </form>
+    </div>
+</div>
+<br>
+<div>
+</div>
+
+{% endblock %}

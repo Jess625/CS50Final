@@ -1,0 +1,46 @@
+{% extends "layout.html" %} {% block title %} New Entry {% endblock %} {% block main %}
+<form action="/entry" method="post">
+    <p class="headline">Tell us about your day.</p>
+    <div class="form-group">
+        <p class="body_text">How did you feel today?</p>
+        <select name="mood">
+            <option>Happy</option>
+            <option>Neutral</option>
+            <option>Sad</option>
+</select>
+        <br>
+        <br>
+        <p class="body_text">How anxious are you today?</p>
+        <select name="anxiety">
+            <option>Not at all</option>
+            <option>Somewhat</option>
+            <option>Very</option>
+</select>
+        </select>
+        <br>
+        <br>
+        <p class="body_text">Have you done something for the sole purpose of enjoyment in the last 24 hours?</p>
+        <select name="enjoyment">
+            <option>Yes</option>
+            <option>No</option>
+</select>
+        </select>
+        <br>
+        <br>
+        <p class="body_text">Have satisfied are you with the way things are going in your life right now?</p>
+        <select name="satisfaction">
+            <option>Very</option>
+            <option>Somewhat</option>
+            <option>Not satisfied</option>
+</select>
+        <br>
+        <br>
+    </div>
+    <p class="body_text">Write as much as you'd like about your day, how you're feeling or whatever you'd like!</p>
+    <textarea rows=5 columns=50 name="entry" placeholder="Journal here"></textarea>
+    </div>
+    <br>
+    <br>
+    <button class="btn btn-info" type="submit">Submit Entry</button>
+</form>
+{% endblock %}

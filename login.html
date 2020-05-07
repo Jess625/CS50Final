@@ -1,0 +1,16 @@
+{% extends "layout.html" %} {% block title %} Log In {% endblock %} {% block main %}
+<form action="/login" method="post">
+    <p class="body_text">Track moods, record memories and more!</p>
+    <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+    </div>
+    <div class="form-group">
+        <input class="form-control" name="password" placeholder="Password" type="password">
+    </div>
+    <button class="btn btn-info" type="submit">Log In</button>
+</form>
+<br>
+<a href="/register">Make an account</a>
+<div style="width:100%;height:0;padding-bottom:37%;position:relative;"><iframe src="https://giphy.com/embed/VCtieFYqpb8VDjC5Pf" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+<p><a href="https://giphy.com/stickers/drawing-pencil-bett-norris-VCtieFYqpb8VDjC5Pf"></a></p>
+{% endblock %}

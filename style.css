@@ -1,0 +1,84 @@
+/* CSS style sheet */
+
+body {
+    background-color: #E3FFFF;
+}
+
+.headline {
+    color: #002B17;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.headline_2 {
+    color: #002B17;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.subtext {
+    font-size: 13px;
+    text-align: left;
+    color: #8388a5;
+    font-style: italic;
+}
+
+.award {
+    font-size: 40px;
+}
+
+.body_text {
+    color: #002B17;
+    font-size: 20px;
+}
+
+.body_left {
+    color: #002B17;
+    font-size: 20px;
+    text-align: left;
+}
+
+nav .navbar-brand {
+    /* size for brand */
+    font-size: xx-large;
+    color: #002B17;
+}
+
+.navbar navbar-expand-md navbar-dark bg-dark border {
+    background-color: #FFFFFF;
+}
+
+.nav-link {
+    color: #FFFFFF;
+}
+
+/* colors for brand */
+
+nav .navbar-brand .goo {
+    color: #7DF7F1;
+    text-shadow: 2px 2px #005E58;
+    font-size: xx-large;
+}
+
+main .form-control {
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main {
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img {
+    /* constrain images on small screens */
+    max-width: 100%;
+}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block title %} Smart Journal {% endblock %} {% block main %}
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Mood</th>
+                <th scope="col">Anxiety</th>
+                <th scope="col">Enjoyment</th>
+                <th scope="col">Satisfaction</th>
+                <th scope="col">Entry</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for lookup in lookups %}
+            <tr>
+                <td>{{ lookup.timestamp }}</td>
+                <td>{{ lookup.mood }}</td>
+                <td>{{ lookup.anxiety }}</td>
+                <td>{{ lookup.enjoyment }}</td>
+                <td>{{ lookup.satisfaction }}</td>
+                <td>{{ lookup.entry }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<p>{{ lookup }}</p>
+
+{% endblock %}
